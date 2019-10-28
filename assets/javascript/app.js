@@ -1,18 +1,19 @@
 window.onload = function () {
-
+  
   $("#next").on("click", nextQuestion);
   $("#timer").text("");
   $("#start").on("click", start);
-  $("#next").on("click", run);
-  $("#next").on("click",reset)
+  
 };
 
 
+$("#start").on("click", run);
 //for timer
-
+var wrong = 0;
+var right = 0;
+var x = 0;
 var number = 20;
 var clock;
-$("#start").on("click", run);
 //runs the timer
 function run() {
   if (!clock) {
@@ -26,7 +27,7 @@ function decrement() {
   number--;
   //live count on screen under timer
   $("#timer").html(number + " seconds");
-
+//when theres 10 seconds left it changes the color to red
   if (number < 10) {
 
     $("#timer").css("color", "red")
@@ -35,31 +36,95 @@ function decrement() {
   if (number === 0) {
     //runs next question function
     reset();
-
-  }
+  }  
 }
+
+
 //resets count down
-function reset(){
+function reset() {
   nextQuestion();
   //resets time
   number = 20;
   $("#timer").css("color", "black")
-  }
+}
 
 
+//starts the game
 function start() {
+
 
   x = 0;
   $("#question").text(myQuestions[x].question);
-  $("#answers").text(myQuestions[x].answers);
+  
+  var html =
+  `
+  <br>
+  <div class="row">
+      <div class="col">
+      <button class="multipleChoice" data-value="a" >A-${myQuestions[x].answers.a}</button>
+      <button class="multipleChoice" data-value="b" >B-${myQuestions[x].answers.b}</button>
+      <button class="multipleChoice" data-value="c" >C-${myQuestions[x].answers.c} </button>  
+          
+      </div>
+  </div>`
+  $("#question").text(myQuestions[x].question);
+  $("#answers").html(html)
+  $(".multipleChoice").on("click",compareAnswers)
+  $("#start").hide();
+
 }
 
 
 //when next is clicked
 function nextQuestion() {
-
-  x = x + 1;
+ number= 20;
+ $("#timer").css("color", "black")
+  x = x  + 1;
+  var html =`<br>
+  <div class="row">
+      <div class="col">
+          <button class="multipleChoice" data-value="a" >A-${myQuestions[x].answers.a}</button>
+          <button class="multipleChoice" data-value="b" >B-${myQuestions[x].answers.b}</button>
+          <button class="multipleChoice" data-value="c" >C-${myQuestions[x].answers.c} </button>  
+      </div>
+  </div>`
   $("#question").text(myQuestions[x].question);
+  $("#answers").html(html)
+  $(".multipleChoice").on("click",compareAnswers)
+
+  //when game is done
+  if ( myQuestions[x]== 7){
+
+    results();
+  }
+
+
+}
+ 
+///
+function compareAnswers(){
+ 
+  var sol = myQuestions[x].correctAnswer;
+  var solution = $(this).data("value");
+  if (sol===solution){
+
+    console.log("correct")
+    right ++;
+  }
+  else{
+
+    wrong ++;
+    console.log(myQuestions[x].correctAnswer)
+    console.log(solution)
+  }
+  
+
+}
+//
+function results(){
+
+  alert("you got "+right+ "question right and "+wrong+"wrong")
+
 
 
 }
@@ -68,10 +133,7 @@ function nextQuestion() {
 
 
 
-
-
-
-
+//questions
 const myQuestions = [{
     question: "1. First laptop computer avaible to the public? ",
     answers: {
@@ -82,16 +144,7 @@ const myQuestions = [{
     correctAnswer: "a"
   },
   {
-    question: "2. When was Apple founded? ",
-    answers: {
-      a: "SApril 1,1975",
-      b: "April 20,1979",
-      c: "April 1,1976"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "3. When was microsoft founded?",
+    question: "2. When was microsoft founded?",
     answers: {
       a: "April 14, 1975",
       b: "April 10, 1975",
@@ -101,13 +154,22 @@ const myQuestions = [{
     correctAnswer: "c"
   },
   {
-    question: "4. Whats the first programming language ever? ",
+    question: "3. Whats the first programming language ever? ",
     answers: {
       a: "C",
       b: "Plankalkul",
       c: "FORTRAN"
     },
     correctAnswer: "b"
+  },
+  {
+    question: "4. When was Apple founded? ",
+    answers: {
+      a: "April 1,1975",
+      b: "April 20,1979",
+      c: "April 1,1976"
+    },
+    correctAnswer: "c"
   },
   {
     question: "5. who created javascript? ",

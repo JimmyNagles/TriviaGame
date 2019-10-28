@@ -8,14 +8,16 @@
     <title>Trivia Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css"
 
 </head>
 
-<body>
+<body class="bo">
+
     <div class="jumbotron text-center text-black bg-info mb-3"">
         <h1>Trivia Game</h1>
     </div>
-        <div class=" container ">
+ <div class=" container ">
     <div class=" container text-center"style="width: 600px;">
         <div class="card text-black bg-info mb-3">
             <div class="card-header">
@@ -39,10 +41,11 @@
                     <h2>Question!</h2>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title" id="question">1. what was the first computer ever release?</h5>
+                    <h5 class="card-title" id="question"></h5>
                     <br>
                     <p id="answers"></p>
-                    <br>
+                   
+
                     <div class="text-right mb-3">
                         <button type="button" class="btn btn-danger" id="next">Next</button>
                     </div>
@@ -50,6 +53,7 @@
             </div>
         </div>
 
+        
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="assets/javascript/app.js"></script>
