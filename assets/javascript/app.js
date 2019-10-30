@@ -105,14 +105,16 @@ function compareAnswers(){
   var solution = $(this).data("value");
   if (sol===solution){
 
-    console.log("correct")
+   
+    
     right ++;
+    $("#correct").html(right);
   }
   else{
-
     wrong ++;
     console.log(myQuestions[x].correctAnswer)
     console.log(solution)
+    $("#incorrect").html(wrong);
   }
   
 
