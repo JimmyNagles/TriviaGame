@@ -93,10 +93,7 @@ function nextQuestion() {
   $(".multipleChoice").on("click",compareAnswers)
 
   //when game is done
-  if ( myQuestions[x]== 7){
-
-    results();
-  }
+  
 
 
 }
