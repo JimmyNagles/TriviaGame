@@ -1,6 +1,6 @@
 window.onload = function () {
   
-  $("#next").on("click", nextQuestion);
+ 
   $("#timer").text("");
   $("#start").on("click", start);
   
@@ -104,17 +104,17 @@ function compareAnswers(){
   var sol = myQuestions[x].correctAnswer;
   var solution = $(this).data("value");
   if (sol===solution){
-
-   
-    
     right ++;
     $("#correct").html(right);
+    nextQuestion();
+
   }
   else{
     wrong ++;
     console.log(myQuestions[x].correctAnswer)
     console.log(solution)
     $("#incorrect").html(wrong);
+    nextQuestion();
   }
   
 
