@@ -7,6 +7,102 @@ window.onload = function () {
 };
 
 
+//questions
+const myQuestions = [{
+  question: "1. First laptop computer avaible to the public? ",
+  answers: {
+    a: "Osborne-1",
+    b: "Apple-1",
+    c: "HP 9100A",
+  },
+  correctAnswer: "a"
+},
+{
+  question: "2. When was microsoft founded?",
+  answers: {
+    a: "April 14, 1975",
+    b: "April 10, 1975",
+    c: "April 4, 1975",
+
+  },
+  correctAnswer: "c"
+},
+{
+  question: "3. Whats the first programming language ever? ",
+  answers: {
+    a: "C",
+    b: "Plankalkul",
+    c: "FORTRAN"
+  },
+  correctAnswer: "b"
+},
+{
+  question: "4. When was Apple founded? ",
+  answers: {
+    a: "April 1,1975",
+    b: "April 20,1979",
+    c: "April 1,1976"
+  },
+  correctAnswer: "c"
+},
+{
+  question: "5. who created javascript? ",
+  answers: {
+    a: "Dennis Ritchie",
+    b: "Cleve Moler",
+    c: "Brendan Eich"
+  },
+  correctAnswer: "c"
+},
+{
+  question: "6. Mozilla Firefox originally launched under what name? ? ",
+  answers: {
+    a: "Mozilla Phoenix",
+    b: "Mozilla Firefly",
+    c: "Mozilla Firebird"
+  },
+  correctAnswer: "a"
+},
+{
+  question: "7. Which one of these tech companies did not start in a garage?",
+  answers: {
+    a: "Amazon",
+    b: "ebay",
+    c: "Apple"
+  },
+  correctAnswer: "b"
+},
+
+{
+  question: "8.Before becoming Google's smartphone OS, Android was being developed for what kind of device? ",
+  answers: {
+    a: "An open source game console",
+    b: "Cameras",
+    c: "Televisions"
+  },
+  correctAnswer: "b"
+},
+{
+  question: "9. What was the Mac's first web browser?",
+  answers: {
+    a: "Samba",
+    b: "Cello",
+    c: "ViolaWWW"
+  },
+  correctAnswer: "a"
+},
+{
+  question: "10. What was the world's first digital, programmable robot? ",
+  answers: {
+    a: "The Stanford Arm",
+    b: "Unimate",
+    c: "drones"
+  },
+  correctAnswer: "b"
+},
+];
+
+
 $("#start").on("click", run);
 //for timer
 var wrong = 0;
@@ -132,97 +228,3 @@ function results(){
 
 
 
-//questions
-const myQuestions = [{
-    question: "1. First laptop computer avaible to the public? ",
-    answers: {
-      a: "Osborne-1",
-      b: "Apple-1",
-      c: "HP 9100A",
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "2. When was microsoft founded?",
-    answers: {
-      a: "April 14, 1975",
-      b: "April 10, 1975",
-      c: "April 4, 1975",
-
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "3. Whats the first programming language ever? ",
-    answers: {
-      a: "C",
-      b: "Plankalkul",
-      c: "FORTRAN"
-    },
-    correctAnswer: "b"
-  },
-  {
-    question: "4. When was Apple founded? ",
-    answers: {
-      a: "April 1,1975",
-      b: "April 20,1979",
-      c: "April 1,1976"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "5. who created javascript? ",
-    answers: {
-      a: "Dennis Ritchie",
-      b: "Cleve Moler",
-      c: "Brendan Eich"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "6. Mozilla Firefox originally launched under what name? ? ",
-    answers: {
-      a: "Mozilla Phoenix",
-      b: "Mozilla Firefly",
-      c: "Mozilla Firebird"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "7. Which one of these tech companies did not start in a garage?",
-    answers: {
-      a: "Amazon",
-      b: "ebay",
-      c: "Apple"
-    },
-    correctAnswer: "b"
-  },
-  
-{
-    question: "8.Before becoming Google's smartphone OS, Android was being developed for what kind of device? ",
-    answers: {
-      a: "An open source game console",
-      b: "Cameras",
-      c: "Televisions"
-    },
-    correctAnswer: "b"
-  },
-  {
-    question: "9. What was the Mac's first web browser?",
-    answers: {
-      a: "Samba",
-      b: "Cello",
-      c: "ViolaWWW"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "10. What was the world's first digital, programmable robot? ",
-    answers: {
-      a: "The Stanford Arm",
-      b: "Unimate",
-      c: "drones"
-    },
-    correctAnswer: "b"
-  },
-];
