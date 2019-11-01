@@ -176,6 +176,8 @@ function nextQuestion() {
  number= 20;
  $("#timer").css("color", "black")
   x = x  + 1;
+
+  if (x<myQuestions.length){  
   var html =`<br>
   <div class="row">
       <div class="col">
@@ -188,8 +190,17 @@ function nextQuestion() {
   $("#answers").html(html)
   $(".multipleChoice").on("click",compareAnswers)
 
-  //when game is done
- 
+
+} 
+//when game is done
+else{
+
+  results();
+
+}
+
+  
+
 
 
 }
@@ -218,7 +229,12 @@ function compareAnswers(){
 //
 function results(){
 
-  alert("you got "+right+ "question right and "+wrong+"wrong")
+  
+
+  $("#gameOver").css("color" ,"red")
+  $("#gameOver").text("Game over")
+  //stops clock
+  clearInterval(clock)
 
 
 
