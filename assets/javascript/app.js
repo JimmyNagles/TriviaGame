@@ -235,6 +235,8 @@ function results(){
   $("#gameOver").text("Game over")
   //stops clock
   clearInterval(clock)
+  //adds restart button to game
+    // $("#restartGame").append()
 
 
 
